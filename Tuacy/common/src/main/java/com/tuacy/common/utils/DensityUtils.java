@@ -41,4 +41,8 @@ public class DensityUtils {
 		return (pxVal / context.getResources().getDisplayMetrics().scaledDensity);
 	}
 
+	public static float int2dp(Context context, int value) {
+		return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value, context.getResources().getDisplayMetrics());
+	}
+
 }
