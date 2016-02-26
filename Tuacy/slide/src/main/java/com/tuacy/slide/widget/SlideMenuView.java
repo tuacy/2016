@@ -23,6 +23,10 @@ public class SlideMenuView extends ViewGroup {
 	private int       mLastX;
 	private int       mLastY;
 	private Scroller  mScroller;
+	private boolean   mIsMenuOpen;
+	private float     mScaler;
+	private int       mLastXIntercept;
+	private int       mLastYIntercept;
 
 	public SlideMenuView(Context context) {
 		this(context, null);
@@ -42,6 +46,7 @@ public class SlideMenuView extends ViewGroup {
 		mScreenHeight = ScreenUtils.getScreenHeight(context);
 		mMenuRightPadding = (int) DensityUtils.int2dp(context, DEFAULT_MENU_PADDING);
 		mScroller = new Scroller(context);
+		mIsMenuOpen = false;
 	}
 
 	@Override
@@ -67,6 +72,9 @@ public class SlideMenuView extends ViewGroup {
 	public void computeScroll() {
 		if (mScroller.computeScrollOffset()) {
 			scrollTo(mScroller.getCurrX(), mScroller.getCurrY());
+			mScaler = Math.abs((float) getScrollX()) / (float) mMenuWidth; // 0 ~ 1
+			//			slideMode1();
+			slideMode2();
 			invalidate();
 		}
 	}
@@ -91,24 +99,95 @@ public class SlideMenuView extends ViewGroup {
 			case MotionEvent.ACTION_MOVE:
 				int currentX = (int) event.getX();
 				int currentY = (int) event.getY();
-				int dX = currentX - mLastX;
-				if (dX < 0) {
-					if (getScrollX() + Math.abs(dX) > 0) {
-						scrollTo(0, 0);
-					} else {
-						scrollBy(-dX, 0);
-					}
-				} else {
-					if (getScrollX() - dX <= -mMenuWidth) {
-						scrollTo(-mMenuWidth, 0);
-					} else {
-						scrollBy(-dX, 0);
-					}
-				}
+				scrolling(currentX - mLastX);
+				mScaler = Math.abs((float) getScrollX()) / (float) mMenuWidth; // 0 ~ 1
+				//				slideMode1();
+				slideMode2();
 				mLastX = currentX;
 				mLastY = currentY;
 				break;
 		}
 		return true;
+	}
+
+	@Override
+	public boolean onInterceptTouchEvent(MotionEvent ev) {
+		boolean intercept = false;
+		int x = (int) ev.getX();
+		int y = (int) ev.getY();
+		switch (ev.getAction()) {
+			case MotionEvent.ACTION_DOWN:
+				intercept = false;
+				break;
+			case MotionEvent.ACTION_MOVE:
+				int deltaX = (int) ev.getX() - mLastXIntercept;
+				int deltaY = (int) ev.getY() - mLastYIntercept;
+				if (Math.abs(deltaX) > Math.abs(deltaY)) {
+					intercept = true;
+				} else {
+					intercept = false;
+				}
+				break;
+			case MotionEvent.ACTION_UP:
+				intercept = false;
+				break;
+		}
+		mLastX = x;
+		mLastY = y;
+		mLastXIntercept = x;
+		mLastYIntercept = y;
+		return intercept;
+	}
+
+	private void closeMenu() {
+		mIsMenuOpen = false;
+		mScroller.startScroll(getScrollX(), 0, -getScrollX(), 0, 500);
+		invalidate();
+	}
+
+	private void openMenu() {
+		mIsMenuOpen = true;
+		mIsMenuOpen = false;
+		mScroller.startScroll(getScrollX(), 0, mMenuWidth - getScrollX(), 0, 500);
+		invalidate();
+	}
+
+	public void toggleMenu() {
+		if (mIsMenuOpen) {
+			closeMenu();
+		} else {
+			openMenu();
+		}
+	}
+
+	private void scrolling(int dx) {
+		if (dx < 0) {
+			if (getScrollX() + Math.abs(dx) > 0) {
+				scrollTo(0, 0);
+			} else {
+				scrollBy(-dx, 0);
+			}
+		} else {
+			if (getScrollX() - dx <= -mMenuWidth) {
+				scrollTo(-mMenuWidth, 0);
+			} else {
+				scrollBy(-dx, 0);
+			}
+		}
+	}
+
+	private void slideMode1() {
+		mMenuView.setTranslationX(2 * (mMenuWidth + getScrollX()) / 3);
+	}
+
+	private void slideMode2() {
+		mMenuView.setTranslationX(mMenuWidth + getScrollX() - (mMenuWidth / 2) * (1.0f - mScaler));
+		mMenuView.setScaleX(0.7f + 0.3f * mScaler);
+		mMenuView.setScaleY(0.7f + 0.3f * mScaler);
+		mMenuView.setAlpha(mScaler);
+
+		mContentView.setScaleX(1 - 0.3f * mScaler);
+		mContentView.setPivotX(0);
+		mContentView.setScaleY(1.0f - 0.3f * mScaler);
 	}
 }
