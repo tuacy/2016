@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval"
+    android:dither="true">
+
+    <gradient
+        android:startColor="#ffffff"
+        android:endColor="@color/colorPrimary"
+        android:gradientRadius="@dimen/oval_radio"
+        android:type="radial"/>
+
+    <size
+        android:height="@dimen/oval_radio"
+        android:width="@dimen/oval_radio"/>
+
+</shape>

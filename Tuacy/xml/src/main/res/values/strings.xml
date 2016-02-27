@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">xml</string>
     <string name="action_settings">Settings</string>
+
+    <string name="stroke_line">Stroke Line</string>
+    <string name="dash_line">Dash Line</string>
+    <string name="shape_ring_stroke">Ring Stroke</string>
+    <string name="shape_ring_solid">Ring Solid</string>
+    <string name="shape_ring_gradient">Ring Gradient</string>
+    <string name="shape_ring_gradient_stroke">Ring Gradient Stroke</string>
+    <string name="shape_ring_gradient_rotate">Ring Gradient Rotate</string>
+    <string name="shape_oval_solid">Oval Solid</string>
 </resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval"
+    android:dither="true">
+
+    <stroke
+        android:width="@dimen/stoke_width"
+        android:dashGap="@dimen/dash_gap"
+        android:dashWidth="@dimen/dash_width"
+        android:color="@color/colorPrimary" />
+
+    <size
+        android:height="@dimen/oval_radio"
+        android:width="@dimen/oval_radio"/>
+
+</shape>

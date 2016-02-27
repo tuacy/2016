@@ -5,4 +5,14 @@
     <dimen name="fab_margin">16dp</dimen>
 
     <dimen name="stoke_width">1dp</dimen>
+    <dimen name="dash_width">2dp</dimen>
+    <dimen name="dash_gap">3dp</dimen>
+
+    <dimen name="corners">10dp</dimen>
+
+    <dimen name="ring_radio">50dp</dimen>
+    <dimen name="oval_radio">50dp</dimen>
+
+    <dimen name="padding_normal">12dp</dimen>
+    <dimen name="margin_normal">12dp</dimen>
 </resources>

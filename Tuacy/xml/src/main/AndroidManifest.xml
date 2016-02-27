@@ -35,6 +35,14 @@
             android:name="com.tuacy.xml.shape.RingShapeActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name="com.tuacy.xml.selector.SelectorActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tuacy.xml.layerlist.LayerListActivity"
+            android:screenOrientation="portrait" />
+
     </application>
 
 </manifest>

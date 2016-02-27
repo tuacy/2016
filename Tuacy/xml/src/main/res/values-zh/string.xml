@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="stroke_line">实线</string>
+    <string name="dash_line">虚线</string>
+
+</resources>
