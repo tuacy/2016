@@ -43,6 +43,46 @@
             android:name="com.tuacy.xml.layerlist.LayerListActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name="com.tuacy.xml.bitmap.BitmapActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tuacy.xml.ninepath.NinePathActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tuacy.xml.levellist.LevelListActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tuacy.xml.transition.TransitionActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tuacy.xml.insert.InsertActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tuacy.xml.clip.ClipActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tuacy.xml.scale.ScaleActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tuacy.xml.rotate.RotateActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tuacy.xml.animatedrotate.AnimatedRotateActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tuacy.xml.animationlist.AnimationListActivity"
+            android:screenOrientation="portrait" />
+
     </application>
 
 </manifest>
