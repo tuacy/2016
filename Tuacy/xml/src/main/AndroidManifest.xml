@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".animation.propertyanimation.CodePropertyAnimationActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -84,11 +84,19 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.tuacy.xml.animation.propertyanimation.PropertyAnimationActivity"
+            android:name=".animation.propertyanimation.XmlPropertyAnimationActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.tuacy.xml.animation.viewanimation.ViewAnimationActivity"
+            android:name=".animation.viewanimation.XmlViewAnimationActivity"
+            android:screenOrientation="portrait" />
+
+        <!--<activity-->
+            <!--android:name=".animation.propertyanimation.CodePropertyAnimationActivity"-->
+            <!--android:screenOrientation="portrait" />-->
+
+        <activity
+            android:name=".animation.viewanimation.CodeViewAnimationActivity"
             android:screenOrientation="portrait" />
 
     </application>

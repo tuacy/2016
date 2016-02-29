@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import com.tuacy.common.base.activity.BaseActivity;
 import com.tuacy.xml.R;
 
-public class ViewAnimationActivity extends BaseActivity {
+public class XmlViewAnimationActivity extends BaseActivity {
 
 	private ImageView mAlphaView;
 	private ImageView mScaleView;
@@ -18,7 +18,7 @@ public class ViewAnimationActivity extends BaseActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_view_animation);
+		setContentView(R.layout.activity_xml_view_animation);
 		mAlphaView = findView(R.id.img_view_animation_alpha);
 		mScaleView = findView(R.id.img_view_animation_scale);
 		mTranslateView = findView(R.id.img_view_animation_translate);

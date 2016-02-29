@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import com.tuacy.common.base.activity.BaseActivity;
 import com.tuacy.xml.R;
 
-public class PropertyAnimationActivity extends BaseActivity {
+public class XmlPropertyAnimationActivity extends BaseActivity {
 
 	private ImageView mAnimationView;
 	private ImageView mObjectView;
@@ -19,7 +19,7 @@ public class PropertyAnimationActivity extends BaseActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_property_animation);
+		setContentView(R.layout.activity_xml_property_animation);
 		mAnimationView = findView(R.id.img_property_animation_animation);
 		ValueAnimator valueAnimator = (ValueAnimator) AnimatorInflater.loadAnimator(this, R.animator.animator_animator);
 		valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
