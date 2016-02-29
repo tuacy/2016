@@ -83,6 +83,14 @@
             android:name="com.tuacy.xml.animationlist.AnimationListActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name="com.tuacy.xml.animation.propertyanimation.PropertyAnimationActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tuacy.xml.animation.viewanimation.ViewAnimationActivity"
+            android:screenOrientation="portrait" />
+
     </application>
 
 </manifest>
