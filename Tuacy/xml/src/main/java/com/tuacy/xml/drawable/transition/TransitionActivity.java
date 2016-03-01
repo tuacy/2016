@@ -1,4 +1,4 @@
-package com.tuacy.xml.transition;
+package com.tuacy.xml.drawable.transition;
 
 import android.graphics.drawable.TransitionDrawable;
 import android.os.Bundle;

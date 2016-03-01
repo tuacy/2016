@@ -20,67 +20,67 @@
         </activity>
 
         <activity
-            android:name="com.tuacy.xml.shape.LineShapeActivity"
+            android:name=".drawable.shape.LineShapeActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.tuacy.xml.shape.OvalShapeActivity"
+            android:name=".drawable.shape.OvalShapeActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.tuacy.xml.shape.RectangleShapeActivity"
+            android:name=".drawable.shape.RectangleShapeActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.tuacy.xml.shape.RingShapeActivity"
+            android:name=".drawable.shape.RingShapeActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.tuacy.xml.selector.SelectorActivity"
+            android:name=".drawable.selector.SelectorActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.tuacy.xml.layerlist.LayerListActivity"
+            android:name=".drawable.layerlist.LayerListActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.tuacy.xml.bitmap.BitmapActivity"
+            android:name=".drawable.bitmap.BitmapActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.tuacy.xml.ninepath.NinePathActivity"
+            android:name=".drawable.ninepath.NinePathActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.tuacy.xml.levellist.LevelListActivity"
+            android:name=".drawable.levellist.LevelListActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.tuacy.xml.transition.TransitionActivity"
+            android:name=".drawable.transition.TransitionActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.tuacy.xml.insert.InsertActivity"
+            android:name=".drawable.insert.InsertActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.tuacy.xml.clip.ClipActivity"
+            android:name=".drawable.clip.ClipActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.tuacy.xml.scale.ScaleActivity"
+            android:name=".drawable.scale.ScaleActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.tuacy.xml.rotate.RotateActivity"
+            android:name=".drawable.rotate.RotateActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.tuacy.xml.animatedrotate.AnimatedRotateActivity"
+            android:name=".drawable.animatedrotate.AnimatedRotateActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name="com.tuacy.xml.animationlist.AnimationListActivity"
+            android:name=".drawable.animationlist.AnimationListActivity"
             android:screenOrientation="portrait" />
 
         <activity

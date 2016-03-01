@@ -1,4 +1,4 @@
-package com.tuacy.xml.animationlist;
+package com.tuacy.xml.drawable.animationlist;
 
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;

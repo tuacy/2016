@@ -1,4 +1,4 @@
-package com.tuacy.xml.rotate;
+package com.tuacy.xml.drawable.rotate;
 
 import android.graphics.drawable.RotateDrawable;
 import android.os.Bundle;

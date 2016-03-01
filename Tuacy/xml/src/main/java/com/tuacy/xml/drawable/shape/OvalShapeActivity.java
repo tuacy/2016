@@ -1,4 +1,4 @@
-package com.tuacy.xml.shape;
+package com.tuacy.xml.drawable.shape;
 
 import android.os.Bundle;
 

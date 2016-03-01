@@ -1,4 +1,4 @@
-package com.tuacy.xml.clip;
+package com.tuacy.xml.drawable.clip;
 
 import android.graphics.drawable.ClipDrawable;
 import android.os.Bundle;

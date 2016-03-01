@@ -1,4 +1,4 @@
-package com.tuacy.xml.scale;
+package com.tuacy.xml.drawable.scale;
 
 import android.graphics.drawable.ScaleDrawable;
 import android.os.Bundle;
