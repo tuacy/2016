@@ -103,6 +103,10 @@
             android:name="com.tuacy.xml.animation.interpolator.InterpolatorActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name="com.tuacy.xml.animation.layouttransition.CodeLayoutTransitionActivity"
+            android:screenOrientation="portrait" />
+
     </application>
 
 </manifest>
