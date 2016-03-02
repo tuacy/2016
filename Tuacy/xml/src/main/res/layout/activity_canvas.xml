@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tuacy="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="@android:color/black">
+
+    <com.tuacy.xml.canvas.views.CanvasCircleView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.tuacy.xml.canvas.views.CanvasTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        tuacy:customerTitleText="Tuacy"
+        tuacy:customerTitleTextColor="#ff0000"
+        tuacy:customerTitleTextSize="40sp"
+        />
+
+    <com.tuacy.xml.canvas.views.CanvasLineView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <com.tuacy.xml.canvas.views.CanvasArcView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.tuacy.xml.canvas.views.CanvasRectView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.tuacy.xml.canvas.views.CanvasOvalView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.tuacy.xml.canvas.views.CanvasPolygonView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.tuacy.xml.canvas.views.CanvasRoundRectView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.tuacy.xml.canvas.views.CanvasBezierView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.tuacy.xml.canvas.views.CanvasPointView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.tuacy.xml.canvas.views.CanvasBitmapView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

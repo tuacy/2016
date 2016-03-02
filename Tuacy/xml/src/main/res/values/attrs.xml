@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="customerTitleText" format="string" />
+    <attr name="customerTitleTextColor" format="color" />
+    <attr name="customerTitleTextSize" format="dimension" />
+
+    <declare-styleable name="CanvasTextView">
+        <attr name="customerTitleText" />
+        <attr name="customerTitleTextColor" />
+        <attr name="customerTitleTextSize" />
+    </declare-styleable>
+
+</resources>

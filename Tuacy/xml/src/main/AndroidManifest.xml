@@ -107,6 +107,11 @@
             android:name="com.tuacy.xml.animation.layouttransition.CodeLayoutTransitionActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name="com.tuacy.xml.canvas.CanvasActivity"
+            android:screenOrientation="portrait" />
+
+
     </application>
 
 </manifest>
