@@ -111,6 +111,14 @@
             android:name="com.tuacy.xml.canvas.CanvasActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name="com.tuacy.xml.canvas.CanvasActionActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tuacy.xml.canvas.CanvasDemoActivity"
+            android:screenOrientation="portrait" />
+
 
     </application>
 

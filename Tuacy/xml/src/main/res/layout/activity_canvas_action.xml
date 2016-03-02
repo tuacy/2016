@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="@android:color/black">
+
+    <com.tuacy.xml.canvas.views.CanvasTranslateView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.tuacy.xml.canvas.views.CanvasRotateView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.tuacy.xml.canvas.views.CanvasScaleView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.tuacy.xml.canvas.views.CanvasSkewView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.tuacy.xml.canvas.views.CanvasClipView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.tuacy.xml.canvas.views.CanvasSaveView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>
