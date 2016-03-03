@@ -127,6 +127,14 @@
             android:name=".canvas.CanvasRegionActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".canvas.CanvasXfermodeActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".canvas.CanvasShaderActivity"
+            android:screenOrientation="portrait" />
+
     </application>
 
 </manifest>
