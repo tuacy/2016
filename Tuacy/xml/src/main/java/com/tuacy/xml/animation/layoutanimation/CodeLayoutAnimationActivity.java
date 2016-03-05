@@ -1,47 +1,53 @@
 package com.tuacy.xml.animation.layoutanimation;
 
-import android.animation.AnimatorInflater;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
 import android.os.Bundle;
-import android.widget.ImageView;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
 
 import com.tuacy.common.base.activity.BaseActivity;
 import com.tuacy.xml.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CodeLayoutAnimationActivity extends BaseActivity {
 
-	private ImageView mAnimationView;
-	private ImageView mObjectView;
-	private ImageView mSetView;
+	private Button   mButtonAdd;
+	private ListView mListView;
+	private ArrayAdapter mAdapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_xml_property_animation);
-		mAnimationView = findView(R.id.img_property_animation_animation);
-		ValueAnimator valueAnimator = (ValueAnimator) AnimatorInflater.loadAnimator(this, R.animator.animator_animator);
-		valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-			@Override
-			public void onAnimationUpdate(ValueAnimator animator) {
-				// 当前动画值
-				int currentValue = (Integer) animator.getAnimatedValue();
-				// 根据比例更改目标view的宽度
-				mAnimationView.setTranslationX(currentValue);
-			}
-		});
-		valueAnimator.start();
+		setContentView(R.layout.activity_code_layout_animation);
+		mListView = findView(R.id.lv_layout_animation);
+		mButtonAdd = findView(R.id.btn_add);
 
-		mObjectView = findView(R.id.img_property_animation_object);
-		ObjectAnimator objectAnimator = (ObjectAnimator) AnimatorInflater.loadAnimator(this, R.animator.animator_object_animator);
-		objectAnimator.setTarget(mObjectView);
-		objectAnimator.start();
+		mAdapter = new ArrayAdapter<>(mContext, android.R.layout.simple_expandable_list_item_1, getData());
+		mListView.setAdapter(mAdapter);
 
-		mSetView = findView(R.id.img_property_animation_set);
-		AnimatorSet setAnimator = (AnimatorSet) AnimatorInflater.loadAnimator(mContext, R.animator.animator_set_animation);
-		setAnimator.setTarget(mSetView);
-		setAnimator.start();
+		//代码设置通过加载XML动画设置文件来创建一个Animation对象；
+		Animation animation= AnimationUtils.loadAnimation(this, R.anim.slide_in_left);   //得到一个LayoutAnimationController对象；
+		LayoutAnimationController controller = new LayoutAnimationController(animation);   //设置控件显示的顺序；
+		controller.setOrder(LayoutAnimationController.ORDER_REVERSE);   //设置控件显示间隔时间；
+		controller.setDelay(0.3f);   //为ListView设置LayoutAnimationController属性；
+		mListView.setLayoutAnimation(controller);
+		mListView.startLayoutAnimation();
 
+	}
+
+	private List<String> getData() {
+
+		List<String> data = new ArrayList<String>();
+		data.add("测试数据1");
+		data.add("测试数据2");
+		data.add("测试数据3");
+		data.add("测试数据4");
+
+		return data;
 	}
 }

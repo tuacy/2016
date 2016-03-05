@@ -1,12 +1,14 @@
 package com.tuacy.xml.animation.layoutanimation;
 
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.animation.LayoutAnimationController;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ListView;
+import android.view.animation.GridLayoutAnimationController;
+import android.widget.BaseAdapter;
+import android.widget.GridView;
+import android.widget.TextView;
 
 import com.tuacy.common.base.activity.BaseActivity;
 import com.tuacy.xml.R;
@@ -16,38 +18,60 @@ import java.util.List;
 
 public class CodeGridLayoutAnimationActivity extends BaseActivity {
 
-	private Button   mButtonAdd;
-	private ListView mListView;
-	private ArrayAdapter mAdapter;
+
+	private GridView mGridView;
+	private GridAdapter mGrideAdapter;
+	private List<String> mDatas = new ArrayList<>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_code_layout_animation);
-		mListView = findView(R.id.lv_layout_animation);
-		mButtonAdd = findView(R.id.btn_add);
+		setContentView(R.layout.activity_code_grid_layout_animation);
+		mGridView = findView(R.id.gv_layout_animation);
 
-		mAdapter = new ArrayAdapter<>(mContext, android.R.layout.simple_expandable_list_item_1, getData());
-		mListView.setAdapter(mAdapter);
+		mDatas.addAll(getData());
+		mGrideAdapter = new GridAdapter();
+		mGridView.setAdapter(mGrideAdapter);
 
-		//代码设置通过加载XML动画设置文件来创建一个Animation对象；
-		Animation animation= AnimationUtils.loadAnimation(this, R.anim.slide_in_left);   //得到一个LayoutAnimationController对象；
-		LayoutAnimationController controller = new LayoutAnimationController(animation);   //设置控件显示的顺序；
-		controller.setOrder(LayoutAnimationController.ORDER_REVERSE);   //设置控件显示间隔时间；
-		controller.setDelay(0.3f);   //为ListView设置LayoutAnimationController属性；
-		mListView.setLayoutAnimation(controller);
-		mListView.startLayoutAnimation();
+		Animation animation = AnimationUtils.loadAnimation(mContext, R.anim.slide_in_left);
+		GridLayoutAnimationController controller = new GridLayoutAnimationController(animation);
+		controller.setColumnDelay(0.75f);
+		controller.setRowDelay(0.5f);
+		controller.setDirection(GridLayoutAnimationController.DIRECTION_BOTTOM_TO_TOP|GridLayoutAnimationController.DIRECTION_LEFT_TO_RIGHT);
+		controller.setDirectionPriority(GridLayoutAnimationController.PRIORITY_NONE);
+		mGridView.setLayoutAnimation(controller);
+		mGridView.startLayoutAnimation();
 
 	}
 
 	private List<String> getData() {
 
 		List<String> data = new ArrayList<String>();
-		data.add("测试数据1");
-		data.add("测试数据2");
-		data.add("测试数据3");
-		data.add("测试数据4");
-
+		for (int i = 1; i < 35; i++) {
+			data.add("DATA " + i);
+		}
 		return data;
+	}
+
+	public class GridAdapter extends BaseAdapter {
+
+		public View getView(int position, View convertView, ViewGroup parent) {
+			TextView i = new TextView(CodeGridLayoutAnimationActivity.this);
+			i.setText(mDatas.get(position));
+			i.setLayoutParams(new GridView.LayoutParams(GridView.LayoutParams.WRAP_CONTENT, GridView.LayoutParams.WRAP_CONTENT));
+			return i;
+		}
+
+		public final int getCount() {
+			return mDatas.size();
+		}
+
+		public final Object getItem(int position) {
+			return null;
+		}
+
+		public final long getItemId(int position) {
+			return position;
+		}
 	}
 }
