@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/id_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <ImageView
+        android:id="@+id/background_img"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginTop="-100dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/pic3" />
+
+    <com.tuacy.xml.customerview.view.ScrollListView
+        android:id="@+id/pull_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:dividerPadding="0dp"
+        android:dividerHeight="0dp"
+        app:maxMoveHeight="200dp"
+        app:headerTopHeight = "100dp"
+        app:headerVisibleHeight="150dp">
+    </com.tuacy.xml.customerview.view.ScrollListView>
+
+</FrameLayout>

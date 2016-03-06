@@ -150,9 +150,13 @@
         <activity
             android:name=".canvas.CanvasShaderActivity"
             android:screenOrientation="portrait" />
-        
+
         <activity
             android:name="com.tuacy.xml.customerview.CustomerViewActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tuacy.xml.customerview.ScrollListViewActivity"
             android:screenOrientation="portrait" />
 
     </application>
