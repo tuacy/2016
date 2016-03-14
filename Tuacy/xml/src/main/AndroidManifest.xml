@@ -108,6 +108,22 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name="com.tuacy.xml.animation.layoutanimation.CodeLayoutAnimationActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tuacy.xml.animation.layoutanimation.XmlLayoutAnimationActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tuacy.xml.animation.layoutanimation.CodeGridLayoutAnimationActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tuacy.xml.animation.layoutanimation.XmlGridLayoutAnimationActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name="com.tuacy.xml.canvas.CanvasActivity"
             android:screenOrientation="portrait" />
 
@@ -133,6 +149,14 @@
 
         <activity
             android:name=".canvas.CanvasShaderActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tuacy.xml.customerview.CustomerViewActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.tuacy.xml.customerview.ScrollListViewActivity"
             android:screenOrientation="portrait" />
 
     </application>
