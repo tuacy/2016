@@ -7,8 +7,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.tuacy.common.log.CustomLog;
-
 public class FingerLinearLayout extends LinearLayout {
 
 	private ViewDragHelper mDragHelper;
@@ -39,7 +37,6 @@ public class FingerLinearLayout extends LinearLayout {
 
 		@Override
 		public void onEdgeDragStarted(int edgeFlags, int pointerId) {
-			CustomLog.tuacy("onEdgeDragStarted");
 		}
 
 		@Override
@@ -48,13 +45,11 @@ public class FingerLinearLayout extends LinearLayout {
 
 		@Override
 		public int getViewVerticalDragRange(View child) {
-//			return getMeasuredHeight() - child.getMeasuredHeight();
 			return 0;
 		}
 
 		@Override
 		public int getViewHorizontalDragRange(View child) {
-//			return getMeasuredWidth() - child.getMeasuredWidth();
 			return 0;
 		}
 

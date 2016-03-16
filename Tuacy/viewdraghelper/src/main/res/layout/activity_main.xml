@@ -5,16 +5,46 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <com.tuacy.viewdraghelper.widget.FingerLinearLayout
+    <com.tuacy.viewdraghelper.widget.DrawerDragLayout
+        android:id="@+id/drawer_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/sky">
 
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="#44ff0000"/>
+        <!-- content view -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/content">
 
+            <Button
+                android:id="@+id/btn_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Switch" />
 
-    </com.tuacy.viewdraghelper.widget.FingerLinearLayout>
+        </LinearLayout>
+
+        <!-- drawer view -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/qq" />
+
+            <ListView
+                android:id="@+id/lv_drawer_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </com.tuacy.viewdraghelper.widget.DrawerDragLayout>
 
 </android.support.design.widget.CoordinatorLayout>
