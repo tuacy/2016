@@ -1,1 +1,1 @@
-include ':slide', ':common', ':xml', ':viewdraghelper'
+include ':slide', ':common', ':xml', ':viewdraghelper', ':library_view'
