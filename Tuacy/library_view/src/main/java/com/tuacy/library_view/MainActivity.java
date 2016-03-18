@@ -1,33 +1,55 @@
 package com.tuacy.library_view;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 
 import com.tuacy.common.base.activity.BaseActivity;
-import com.tuacy.library_view.view.CircleMenuLayout;
+import com.tuacy.library_view.view.ViewPagerIndicator;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MainActivity extends BaseActivity {
 
-	private String[] mItemTexts = new String[]{"安全中心 ",
-											   "特色服务",
-											   "投资理财",
-											   "转账汇款",
-											   "我的账户",
-											   "信用卡"};
-	private int[]    mItemImgs  = new int[]{R.drawable.ic_safe_normal,
-											R.drawable.ic_server_normal,
-											R.drawable.ic_finance_normal,
-											R.drawable.ic_money_normal,
-											R.drawable.ic_user_normal,
-											R.drawable.ic_credit_normal};
+	private List<String> mDatas = Arrays.asList("短信1", "短信2", "短信3", "短信4", "短信5", "短信6", "短信7", "短信8", "短信9");
 
-	private CircleMenuLayout mLayoutCircle;
+	private ViewPager            mViewPager;
+	private FragmentPagerAdapter mAdapter;
+	private List<Fragment> mTabContents = new ArrayList<Fragment>();
+
+	private ViewPagerIndicator mIndicator;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		mLayoutCircle = findView(R.id.layout_circle_menu);
-		mLayoutCircle.setItemMenuInfo(mItemImgs, mItemTexts);
+		mViewPager = findView(R.id.viewpager_fragment);
+		mIndicator = findView(R.id.layout_indicator);
+		initData();
+	}
+
+	private void initData() {
+		for (String data : mDatas) {
+			VpFragment fragment = VpFragment.newInstance(data);
+			mTabContents.add(fragment);
+		}
+		mAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
+			@Override
+			public int getCount() {
+				return mTabContents.size();
+			}
+
+			@Override
+			public Fragment getItem(int position) {
+				return mTabContents.get(position);
+			}
+		};
+		mIndicator.setTabDatas(mDatas);
+		mViewPager.setAdapter(mAdapter);
+		mIndicator.setViewPager(mViewPager, 0);
 	}
 
 }
