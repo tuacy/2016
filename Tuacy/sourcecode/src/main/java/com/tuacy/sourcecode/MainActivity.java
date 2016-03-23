@@ -7,6 +7,7 @@ import android.widget.ListView;
 
 import com.tuacy.common.base.activity.BaseActivity;
 import com.tuacy.sourcecode.asynctask.AsyncTaskActivity;
+import com.tuacy.sourcecode.concurrent.ConcurrentActivity;
 import com.tuacy.sourcecode.handler.HandlerActivity;
 import com.tuacy.sourcecode.handlerthread.HandlerThreadActivity;
 
@@ -32,6 +33,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
 		mData.add("Handler");
 		mData.add("AsyncTask");
 		mData.add("HandlerThread");
+		mData.add("Concurrent");
 
 		MainTitleAdapter adapter = new MainTitleAdapter(mContext, R.layout.item_main_title, mData);
 		mMainTitle.setAdapter(adapter);
@@ -57,6 +59,9 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
 				break;
 			case 2:
 				HandlerThreadActivity.startUp(mContext);
+				break;
+			case 3:
+				ConcurrentActivity.startUp(mContext);
 				break;
 		}
 	}

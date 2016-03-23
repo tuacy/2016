@@ -24,6 +24,9 @@
         <activity android:name=".handler.HandlerActivity" />
 
         <activity android:name=".handlerthread.HandlerThreadActivity" />
+
+        <activity android:name="com.tuacy.sourcecode.concurrent.ConcurrentActivity" />
+
     </application>
 
 </manifest>
