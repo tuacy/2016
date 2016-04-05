@@ -29,6 +29,8 @@
 
         <activity android:name="com.tuacy.sourcecode.inflate.InflateActivity" />
 
+        <activity android:name=".gesturedetector.GestureDetectorActivity"/>
+
     </application>
 
 </manifest>

@@ -8,6 +8,7 @@ import android.widget.ListView;
 import com.tuacy.common.base.activity.BaseActivity;
 import com.tuacy.sourcecode.asynctask.AsyncTaskActivity;
 import com.tuacy.sourcecode.concurrent.ConcurrentActivity;
+import com.tuacy.sourcecode.gesturedetector.GestureDetectorActivity;
 import com.tuacy.sourcecode.handler.HandlerActivity;
 import com.tuacy.sourcecode.handlerthread.HandlerThreadActivity;
 import com.tuacy.sourcecode.inflate.InflateActivity;
@@ -37,6 +38,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
 		mData.add("HandlerThread");
 		mData.add("Concurrent");
 		mData.add("Inflate");
+		mData.add("GestureDetector");
 
 		MainTitleAdapter adapter = new MainTitleAdapter(mContext, R.layout.item_main_title, mData);
 		mMainTitle.setAdapter(adapter);
@@ -68,6 +70,9 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
 				break;
 			case 4:
 				InflateActivity.startUp(mContext);
+				break;
+			case 5:
+				GestureDetectorActivity.startUp(mContext);
 				break;
 		}
 	}
