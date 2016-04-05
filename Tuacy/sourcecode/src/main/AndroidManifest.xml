@@ -27,6 +27,8 @@
 
         <activity android:name="com.tuacy.sourcecode.concurrent.ConcurrentActivity" />
 
+        <activity android:name="com.tuacy.sourcecode.inflate.InflateActivity" />
+
     </application>
 
 </manifest>

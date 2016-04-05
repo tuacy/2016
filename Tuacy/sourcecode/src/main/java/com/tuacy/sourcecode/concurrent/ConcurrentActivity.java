@@ -21,6 +21,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.SynchronousQueue;
+import java.util.concurrent.TimeUnit;
 
 public class ConcurrentActivity extends BaseActivity implements View.OnClickListener {
 
@@ -33,6 +35,8 @@ public class ConcurrentActivity extends BaseActivity implements View.OnClickList
 	private Button mRunnable;
 	private Button mFutureTask;
 	private Button mCompletionService;
+
+	private SynchronousQueue<Long> workQueue;
 
 
 	@Override
@@ -47,38 +51,61 @@ public class ConcurrentActivity extends BaseActivity implements View.OnClickList
 		mFutureTask.setOnClickListener(this);
 		mCompletionService = findView(R.id.btn_test_completionService);
 		mCompletionService.setOnClickListener(this);
+
+		workQueue = new SynchronousQueue<Long>();
+		testSynchronousQueue();
+	}
+
+	private void testSynchronousQueue() {
+		new Thread() {
+			@Override
+			public void run() {
+				CustomLog.tuacy("start poll");
+				try {
+					CustomLog.tuacy("poll = " + workQueue.poll(10, TimeUnit.SECONDS));
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+					CustomLog.tuacy("InterruptedException");
+				}
+				CustomLog.tuacy("end poll");
+			}
+		}.start();
 	}
 
 	private void testThread() {
-		Thread thread1 = new Thread() {
-			@Override
-			public void run() {
-				for (int index = 0; index < 10; index++) {
-					CustomLog.tuacy("A index =" + index);
-				}
-			}
-		};
-		thread1.start();
 
-		Thread thread2 = new Thread() {
-			@Override
-			public void run() {
-				for (int index = 0; index < 10; index++) {
-					CustomLog.tuacy("B index =" + index);
-				}
-			}
-		};
-		thread2.start();
+		CustomLog.tuacy("  " + workQueue.offer(2L));
+		CustomLog.tuacy("" + workQueue.poll());
 
-		Thread thread3 = new Thread() {
-			@Override
-			public void run() {
-				for (int index = 0; index < 10; index++) {
-					CustomLog.tuacy("C index =" + index);
-				}
-			}
-		};
-		thread3.start();
+//		Thread thread1 = new Thread() {
+//			@Override
+//			public void run() {
+//				for (int index = 0; index < 10; index++) {
+//					CustomLog.tuacy("A index =" + index);
+//				}
+//			}
+//		};
+//		thread1.start();
+//
+//		Thread thread2 = new Thread() {
+//			@Override
+//			public void run() {
+//				for (int index = 0; index < 10; index++) {
+//					CustomLog.tuacy("B index =" + index);
+//				}
+//			}
+//		};
+//		thread2.start();
+//
+//		Thread thread3 = new Thread() {
+//			@Override
+//			public void run() {
+//				for (int index = 0; index < 10; index++) {
+//					CustomLog.tuacy("C index =" + index);
+//				}
+//			}
+//		};
+//		thread3.start();
 	}
 
 	private void testRunnable() {

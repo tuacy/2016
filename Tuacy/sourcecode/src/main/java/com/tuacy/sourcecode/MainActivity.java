@@ -10,6 +10,7 @@ import com.tuacy.sourcecode.asynctask.AsyncTaskActivity;
 import com.tuacy.sourcecode.concurrent.ConcurrentActivity;
 import com.tuacy.sourcecode.handler.HandlerActivity;
 import com.tuacy.sourcecode.handlerthread.HandlerThreadActivity;
+import com.tuacy.sourcecode.inflate.InflateActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +19,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
 
 	private ListView     mMainTitle;
 	private List<String> mData;
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
 		mData.add("AsyncTask");
 		mData.add("HandlerThread");
 		mData.add("Concurrent");
+		mData.add("Inflate");
 
 		MainTitleAdapter adapter = new MainTitleAdapter(mContext, R.layout.item_main_title, mData);
 		mMainTitle.setAdapter(adapter);
@@ -62,6 +65,9 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
 				break;
 			case 3:
 				ConcurrentActivity.startUp(mContext);
+				break;
+			case 4:
+				InflateActivity.startUp(mContext);
 				break;
 		}
 	}
