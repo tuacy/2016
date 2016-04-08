@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tuacy.sourcecode">
+    package="com.tuacy.bezier">
 
     <application
         android:allowBackup="true"
@@ -18,21 +18,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".asynctask.AsyncTaskActivity" />
-
-        <activity android:name=".handler.HandlerActivity" />
-
-        <activity android:name=".handlerthread.HandlerThreadActivity" />
-
-        <activity android:name="com.tuacy.sourcecode.concurrent.ConcurrentActivity" />
-
-        <activity android:name="com.tuacy.sourcecode.inflate.InflateActivity" />
-
-        <activity android:name=".gesturedetector.GestureDetectorActivity" />
-
-        <activity android:name=".nestedscroll.NestedScrollActivity" />
-
     </application>
 
 </manifest>

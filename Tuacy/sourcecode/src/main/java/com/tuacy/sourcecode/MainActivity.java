@@ -12,6 +12,7 @@ import com.tuacy.sourcecode.gesturedetector.GestureDetectorActivity;
 import com.tuacy.sourcecode.handler.HandlerActivity;
 import com.tuacy.sourcecode.handlerthread.HandlerThreadActivity;
 import com.tuacy.sourcecode.inflate.InflateActivity;
+import com.tuacy.sourcecode.nestedscroll.NestedScrollActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +40,7 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
 		mData.add("Concurrent");
 		mData.add("Inflate");
 		mData.add("GestureDetector");
+		mData.add("NestedScroll");
 
 		MainTitleAdapter adapter = new MainTitleAdapter(mContext, R.layout.item_main_title, mData);
 		mMainTitle.setAdapter(adapter);
@@ -73,6 +75,9 @@ public class MainActivity extends BaseActivity implements AdapterView.OnItemClic
 				break;
 			case 5:
 				GestureDetectorActivity.startUp(mContext);
+				break;
+			case 6:
+				NestedScrollActivity.startUp(mContext);
 				break;
 		}
 	}
